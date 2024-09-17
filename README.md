@@ -4,10 +4,24 @@
 
 # VantTec's Synthetic Data Repository
 
+This is the Vanttec's repository used for synthetic data generation used to feed image segmentation and object detection models. It runs with docker containers and a GPU, but a simplified version can be run without GPU.
 
-This is the Vanttec's repository used for synthetic data generation used to feed image segmentation and object detection models. It runs with docker containers and a GPU.
+<!-- TABLE OF CONTENTS -->
+<summary>Table of Contents</summary>
+<ol>
+  <li>
+    <a href="#installation">Installation</a>
+  </li>
+  <li>
+    <a href="#usage">Usage</a>
+    <ul>
+      <li><a href="#LoRAs">LoRAs</a></li>
+    </ul>
+  </li>
+</ol>
 
 
+## Installation
 ```Shell
 cd
 git clone --recurse-submodules https://github.com/vanttec/vanttec_synthdata.git
@@ -26,11 +40,18 @@ docker build -t uuv_synth .
 docker exec -it uuv_synth /bin/bash
 ```
 
-**Was the GUI working and now isn't? Please use:**
+## Usage
 
-```Shell
-docker stop uuv_synthdata
-docker rm uuv_synthdata
-cd ~/vanttec_uuv/dockerfiles/{selected_option}./create_container.bash
-docker exec -it uuv_synthdata /bin/bash
-```
+### LoRA
+
+Underwater scenary: https://huggingface.co/Ivan5d/lora_deep_sea. Trigger words: UNDERWATER_SCENE, aqua
+
+Terrestrial scenary: 
+
+Aerial scenary:
+
+This is a example image obtained from the test.py script using a custom lora, stable diffusion v-1.5 and controlnet.
+<div align="center">
+  <a href="">
+    <img src="controlnet_depthmap.png" alt="test" width="1080" height="720">
+  </a>

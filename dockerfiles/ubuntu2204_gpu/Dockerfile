@@ -29,6 +29,14 @@ RUN pip install accelerate
 
 RUN pip install git+https://github.com/huggingface/diffusers
 
+RUN pip install pft
+
+RUN pip install -q diffusers transformers accelerate invisible-watermark>=0.2.0
+
+RUN pip install xformers
+
+RUN pip install matplotlib
+
 RUN mkdir -p /ws/vanttec_synth/
 
 # Blender and Blenderproc
