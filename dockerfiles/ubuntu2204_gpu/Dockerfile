@@ -11,6 +11,8 @@
 
 FROM pytorch/pytorch:2.4.0-cuda12.1-cudnn9-devel
 
+RUN ln -snf /usr/share/zoneinfo/$CONTAINER_TIMEZONE /etc/localtime && echo $CONTAINER_TIMEZONE > /etc/timezone
+
 # Install useful packages
 RUN DEBIAN_FRONTEND=noninteractive apt-get update && apt-get install -y \
     python3-pip \
@@ -20,6 +22,9 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get update && apt-get install -y \
     curl \
     build-essential \
     dbus-x11 \
+    python3.10-venv \
+    python3-tk \
+    wget \
     software-properties-common -y \
     && rm -r /var/lib/apt/lists/*
 

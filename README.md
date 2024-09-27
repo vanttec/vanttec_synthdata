@@ -11,17 +11,18 @@ This is the Vanttec's repository used for synthetic data generation used to feed
 <ol>
   <li>
     <a href="#installation">Installation</a>
+    <ul>
+      <li><a href="#">LoRAs</a></li>
+    </ul>
   </li>
   <li>
     <a href="#usage">Usage</a>
-    <ul>
-      <li><a href="#LoRAs">LoRAs</a></li>
-    </ul>
   </li>
 </ol>
 
 
 ## Installation
+ 
 ```Shell
 cd
 git clone --recurse-submodules https://github.com/vanttec/vanttec_synthdata.git
@@ -40,9 +41,20 @@ docker build -t uuv_synth .
 docker exec -it uuv_synth /bin/bash
 ```
 
-## Usage
+### Low Rank Adaptation (LoRA)
 
-### LoRA
+The diffuser model should also be trained for generating images with custom objects. [LoRA](https://arxiv.org/pdf/2106.09685) is an efficient way to train a custom diffuser model. To train a LoRA, [Koya SS](https://github.com/bmaltais/kohya_ss) and [ComfyUi](https://github.com/comfyanonymous/ComfyUI) is used.
+
+The KohyaSS and ComfyUi projects are already on the repo. To install them, please use a python virtual environment and add the [wasnode](https://github.com/WASasquatch/was-node-suite-comfyui) for saving multiple images at once within the ComfyUi.
+
+## Usage
+<div align="center">
+  <a href="">
+    <img src="docs/comfyui.png" alt="comfyui" width="640" height="480">
+  </a>
+</div>
+
+## Results
 
 Underwater scenary: https://huggingface.co/Ivan5d/lora_deep_sea. Trigger words: UNDERWATER_SCENE, aqua
 
@@ -51,7 +63,13 @@ Terrestrial scenary:
 Aerial scenary:
 
 This is a example image obtained from the test.py script using a custom lora, stable diffusion v-1.5 and controlnet.
+
 <div align="center">
   <a href="">
     <img src="controlnet_depthmap.png" alt="test" width="1080" height="720">
   </a>
+</div>
+
+## Troubleshooting
+
+The PyTorch-CUDA setup used by bitsandbytes is mismatched with the host computer: https://huggingface.co/docs/bitsandbytes/main/en/installation

@@ -12,6 +12,6 @@ docker run -it -d\
     --privileged \
     -v "/dev/bus/usb/:/dev/bus/usb" \
     -v "${PWD%/*/*}:/ws/vanttec_synth" \
-    --network host \
-    uuv_synth \
+    
+uuv_synth \
     /bin/bash
