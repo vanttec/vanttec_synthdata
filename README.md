@@ -4,7 +4,8 @@
 
 # VantTec's Synthetic Data Repository
 
-This is the Vanttec's repository used for synthetic data generation used to feed image segmentation and object detection models. It runs with docker containers and a GPU, but a simplified version can be run without GPU.
+This is the Vanttec's repository used for synthetic data generation used to feed image segmentation and object detection models. It runs with docker containers and a GPU, but a simplified version might be run without GPU. 
+**For more information about how to use the repo, please refer to the UUV's Notion.**
 
 <!-- TABLE OF CONTENTS -->
 <summary>Table of Contents</summary>
