@@ -57,19 +57,14 @@ The KohyaSS and ComfyUi projects are already on the repo. To install them, pleas
 
 ## Results
 
-Underwater scenary: https://huggingface.co/Ivan5d/lora_deep_sea. Trigger words: UNDERWATER_SCENE, aqua
-
-Terrestrial scenary: 
-
-Aerial scenary:
-
-This is a example image obtained from the test.py script using a custom lora, stable diffusion v-1.5 and controlnet.
+Example scene using this workflow: https://comfyui-wiki.com/tutorial/advanced/flux1-comfyui-guide-workflow-and-examples
 
 <div align="center">
   <a href="">
-    <img src="controlnet_depthmap.png" alt="test" width="1080" height="720">
+    <img src="docs/flux_dev1_2.png" alt="flux" width="640" height="640">
   </a>
 </div>
+
 
 ## Troubleshooting
 
